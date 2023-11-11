@@ -1,5 +1,5 @@
 require('./models/BidUser');
-require('./models/Products');
+require('./models/Product');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,7 +10,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
-//app.use(productRoutes);
+app.use(productRoutes);
 
 const mongoUri = 'mongodb+srv://sshrutissingh2002:mongodbpassword@cluster0.bmiyh2k.mongodb.net/?retryWrites=true&w=majority'
 

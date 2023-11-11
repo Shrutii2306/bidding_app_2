@@ -2,9 +2,18 @@ const mongoose =require('mongoose');
 
 const detailSchema = new mongoose.Schema({
 
-    price: Number,
-    lastBidder : String,
-    creater : String    
+    price:{
+        type:  Number,
+        required : true
+    },
+    lastBidder : {
+        type:String,
+        required : true
+    },
+    creater : {
+        type : String,
+        required : true 
+    }   
 }) 
 
 const productSchema = new mongoose.Schema({
@@ -22,4 +31,4 @@ const productSchema = new mongoose.Schema({
     details : [detailSchema]
 });
 
-mongoose.model('Products', productSchema);
+mongoose.model('Product', productSchema);
